@@ -15,7 +15,7 @@ Animal::Animal(Animal const &src) //copy constructor
     //this->_type = src._type;
     std::cout << BLUE << "Animal copy constructor called for " << _type << RESET << std::endl;
 }
-Animal Animal::operator=(Animal const &rhs) // copy assignation operator
+Animal &Animal::operator=(Animal const &rhs) // copy assignation operator
 {
     if (this != &rhs)
         *this = rhs; //this->_type = rhs._type;
@@ -27,3 +27,13 @@ Animal::Animal(std::string type) : _type(type) // default constructor
 {
     std::cout << BLUE << "Animal default constructor called for " << _type << RESET << std::endl;
 }
+
+void Animal::makeSound() const
+{
+    std::cout << BLUE << "sorry I lost my voice" << RESET << std::endl;
+}
+
+ std::string const &Animal::getType() const
+ {
+    return _type;
+ }
