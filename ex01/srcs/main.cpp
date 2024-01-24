@@ -71,9 +71,9 @@ int	main() {
     std::cout << "__________________________________________" << std::endl;
 
 	
+	std::cout << "___________seg here_______________________________" << std::endl;
     const Animal* k = new Dog(*dynamic_cast<const Dog*>(j));
 
-	std::cout << "___________seg here_______________________________" << std::endl;
 	std::cout << k->getType() << " " << std::endl;
 	
 	std::cout << "__________________________________________" << std::endl;

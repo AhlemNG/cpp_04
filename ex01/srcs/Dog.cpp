@@ -16,6 +16,7 @@ Dog::Dog(Dog const &src): Animal(src)
 {
     _type = src._type;
     _brain = new Brain(*src._brain);
+    std::cout << "here here" << std::endl;
     std::cout << YELLOW << "Dog copy constructor called for " << _type << RESET << std::endl;
 }
 Dog &Dog::operator=(Dog const &rhs) // copy assignation operator

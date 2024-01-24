@@ -11,7 +11,9 @@ Brain::~Brain() // destructor
 }
 Brain::Brain(Brain const &src) //copy constructor
 {
-    *this = src;
+    for (int i = 0; i < 99; i++)
+        this->_ideas[i] = src._ideas[i];
+    std::cout << "in brain" << std::endl;
     std::cout << MAGENTA << "Brain copy constructor called" << RESET << std::endl;
 }
 Brain &Brain::operator=(Brain const &rhs) // copy assignation operator
