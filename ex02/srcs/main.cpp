@@ -153,10 +153,10 @@ It requires at least one virtual function in the base class to enable the polymo
 
 int main()
 {
-const AAnimal* j = new Dog();
-const AAnimal* i = new Cat();
-// AAnimal animal;
-delete j;//should not create a leak
-delete i;
-return 0;
+    const AAnimal* j = new Dog();
+    const AAnimal* i = new Cat();
+    // AAnimal animal;
+    delete j;//should not create a leak
+    delete i;
+    return 0;
 }
