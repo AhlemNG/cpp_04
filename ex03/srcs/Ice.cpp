@@ -1,18 +1,16 @@
 #include "../incs/Ice.hpp"
 
-Ice::Ice() : AMateria()
+Ice::Ice() : AMateria("ice")
 {
-    _type = "Ice";
-    std::cout << GREEN << "Ice default constuctor called for " << _type << RESET << std::endl;
+    std::cout << WHITE << "Ice default constuctor called for " << _type << RESET << std::endl;
 }
 Ice::~Ice()
 {
-    std::cout << GREEN << "Ice destuctor called for " << _type << RESET << std::endl;
+    std::cout << WHITE << "Ice destuctor called for " << _type << RESET << std::endl;
 }
-Ice::Ice(Ice &src): AMateria()       
+Ice::Ice(Ice const &src): AMateria(src)       
 {
-    _type = src._type;
-    std::cout << GREEN << "Ice copy constuctor called for " << _type << RESET << std::endl;
+    std::cout << WHITE << "Ice copy constuctor called for " << _type << RESET << std::endl;
 }
 
 Ice &Ice::operator=(Ice const &rhs)
@@ -25,14 +23,12 @@ Ice &Ice::operator=(Ice const &rhs)
 Ice::Ice(std::string const & type) : AMateria()
 {
     _type = type;
-    std::cout << GREEN << "Ice parametric constuctor called for " << _type << RESET << std::endl;
+    std::cout << WHITE << "Ice parametric constuctor called for " << _type << RESET << std::endl;
 }
 
 AMateria* Ice::clone() const //puerement virtuelle elle est specifiee dans la classe fille
 {
-    Ice *c = new Ice();
-    *c = *this;
-    return (c);
+    return (new Ice(*this));
 }
 void Ice::use(ICharacter& target)
 {

@@ -1,17 +1,15 @@
 #include "../incs/Cure.hpp"
 
-Cure::Cure() : AMateria()
+Cure::Cure() : AMateria("cure")
 {
-    _type = "cure";
     std::cout << GREEN << "Cure default constuctor called for " << _type << RESET << std::endl;
 }
 Cure::~Cure()
 {
     std::cout << GREEN << "Cure destuctor called for " << _type << RESET << std::endl;
 }
-Cure::Cure(Cure &src): AMateria()       
+Cure::Cure(Cure const &src): AMateria(src)       
 {
-    _type = src._type;
     std::cout << GREEN << "Cure copy constuctor called for " << _type << RESET << std::endl;
 }
 
@@ -30,9 +28,7 @@ Cure::Cure(std::string const & type) : AMateria()
 
 AMateria* Cure::clone() const //puerement virtuelle elle est specifiee dans la classe fille
 {
-    Cure *c = new Cure();
-    *c = *this;
-    return (c);
+    return (new Cure(*this));
 }
 void Cure::use(ICharacter& target)
 {

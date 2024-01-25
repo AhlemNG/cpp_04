@@ -12,7 +12,7 @@ class AMateria
     public:
         AMateria();//default constructor
         virtual ~AMateria();//destructor
-        AMateria(AMateria &src); //copy constructor  
+        AMateria(AMateria const &src); //copy constructor  
         AMateria &operator=(AMateria const &rhs); // copy assignation operator
         AMateria(std::string const & type); // parametric constructor
 
