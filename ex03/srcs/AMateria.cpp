@@ -10,7 +10,7 @@ AMateria::~AMateria()
 }
 AMateria::AMateria(AMateria const &src) : _type(src._type) 
 {
-    std::cout << BLUE << "AMateria copy constuctor called for " <<  RESET << std::endl;
+    std::cout << BLUE << "AMateria copy constuctor called " <<  RESET << std::endl;
 }
 
 AMateria &AMateria::operator=(AMateria const &rhs)
@@ -22,7 +22,7 @@ AMateria &AMateria::operator=(AMateria const &rhs)
 
 AMateria::AMateria(std::string const & type) : _type(type)
 {
-    std::cout << BLUE << "AMateria parametric constuctor called for " <<  RESET << std::endl;
+    std::cout << BLUE << "AMateria parametric constuctor called " <<  RESET << std::endl;
 }
 
 std::string const & AMateria::getType() const
