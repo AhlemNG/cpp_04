@@ -17,7 +17,7 @@ Character::~Character()
   }
   std::cout << LBLUE << "Character Destructor Called" << RESET << std::endl;
 }
-Character::Character(const Character &src) : ICharacter(src) 
+Character::Character(const Character &src)
 {
     _name = src.getName();
     for (int i = 0; i < 4; i++)
