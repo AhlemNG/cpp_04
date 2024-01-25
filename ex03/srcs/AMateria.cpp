@@ -6,7 +6,7 @@ AMateria::AMateria()
 }
 AMateria::~AMateria()
 {
-    std::cout << BLUE << "AMateria destuctor called for " <<  RESET << std::endl;
+    std::cout << BLUE << "AMateria destuctor called " <<  RESET << std::endl;
 }
 AMateria::AMateria(AMateria const &src) : _type(src._type) 
 {
