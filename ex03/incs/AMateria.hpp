@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include "Colors.hpp"
-#include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {

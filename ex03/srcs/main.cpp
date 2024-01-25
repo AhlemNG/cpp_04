@@ -1,12 +1,11 @@
 #include <iostream>
 #include "../incs/Colors.hpp"
 #include "../incs/AMateria.hpp"
-#include "../incs/ICharacter.hpp"
-#include "../incs/Character.hpp"
-#include "../incs/Ice.hpp"
-#include "../incs/Cure.hpp"
 #include "../incs/MateriaSource.hpp"
 #include "../incs/Cure.hpp"
+#include "../incs/Ice.hpp"
+#include "../incs/ICharacter.hpp"
+#include "../incs/Character.hpp"
 
 int main()
 {

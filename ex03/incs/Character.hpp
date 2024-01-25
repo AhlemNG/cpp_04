@@ -8,7 +8,7 @@
 class Character : public ICharacter
 {
     private:
-        std::string name;
+        std::string _name;
         AMateria *_inventory[4]; //emty at construction
     public: 
         Character();//default constructor

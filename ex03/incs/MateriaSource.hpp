@@ -1,17 +1,21 @@
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-#include <iostream>
-#include "Colors.hpp"
+#include "IMateriaSource.hpp"
 #include "AMateria.hpp"
 
-class IMateriaSource
+class MateriaSource: public IMateriaSource
 {
+    private:
+        AMateria *_learntMateria[4];
     public:
-        virtual ~IMateriaSource() {}
+        MateriaSource();
+        ~MateriaSource();
+        MateriaSource(MateriaSource const& src);
+        MateriaSource& operator=(MateriaSource const& rhs);
         
-        virtual void learnMateria(AMateria*) = 0;
-        virtual AMateria* createMateria(std::string const & type) = 0;
+        void learnMateria(AMateria* m);
+        AMateria* createMateria(std::string const& type);
 };
 
 #endif
