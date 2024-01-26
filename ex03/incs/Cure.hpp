@@ -6,7 +6,7 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-class Cure : public AMateria
+class Cure : virtual public AMateria
 {
     public: 
         Cure();//default constructor

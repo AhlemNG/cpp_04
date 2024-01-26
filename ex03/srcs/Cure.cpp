@@ -2,15 +2,15 @@
 
 Cure::Cure() : AMateria("cure")
 {
-    std::cout << GREEN << "Cure default constuctor called for " << _type << RESET << std::endl;
+    // std::cout << GREEN << "Cure default constuctor called for " << _type << RESET << std::endl;
 }
 Cure::~Cure()
 {
-    std::cout << GREEN << "Cure destuctor called for " << _type << RESET << std::endl;
+    // std::cout << GREEN << "Cure destuctor called for " << _type << RESET << std::endl;
 }
 Cure::Cure(Cure const &src): AMateria(src)       
 {
-    std::cout << GREEN << "Cure copy constuctor called for " << _type << RESET << std::endl;
+    // std::cout << GREEN << "Cure copy constuctor called for " << _type << RESET << std::endl;
 }
 
 Cure &Cure::operator=(Cure const &rhs)
@@ -23,7 +23,7 @@ Cure &Cure::operator=(Cure const &rhs)
 Cure::Cure(std::string const & type) : AMateria()
 {
     _type = type;
-    std::cout << GREEN << "Cure parametric constuctor called for " << _type << RESET << std::endl;
+    // std::cout << GREEN << "Cure parametric constuctor called for " << _type << RESET << std::endl;
 }
 
 AMateria* Cure::clone() const //puerement virtuelle elle est specifiee dans la classe fille

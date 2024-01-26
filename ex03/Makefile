@@ -1,4 +1,4 @@
-NAME= Brain
+NAME= brain
 
 INCDIR= -I./incs
 
@@ -8,7 +8,7 @@ SRCDIR= ./srcs
 
 CXX= c++
 
-CXXFLAGS= -Wall -Werror -Wextra -std=c++98 ${INCDIR} 
+CXXFLAGS= -Wall -Werror -Wextra -std=c++98  ${INCDIR} #-fsanitize=address  
 
 SRCS = ${wildcard ${SRCDIR}/*.cpp}
 

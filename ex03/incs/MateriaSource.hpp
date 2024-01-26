@@ -4,7 +4,7 @@
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
 
-class MateriaSource: public IMateriaSource
+class MateriaSource: virtual public IMateriaSource
 {
     private:
         AMateria *_learntMateria[4];

@@ -5,11 +5,14 @@
 #include "Colors.hpp"
 #include "ICharacter.hpp"
 
-class Character : public ICharacter
+class Character : virtual public ICharacter
 {
     private:
         std::string _name;
         AMateria *_inventory[4]; //emty at construction
+        AMateria **_floor;
+        int _floorSize;
+        int _maxFloorSize;
     public: 
         Character();//default constructor
         ~Character();//destructor
