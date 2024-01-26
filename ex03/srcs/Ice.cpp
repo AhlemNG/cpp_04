@@ -30,6 +30,7 @@ AMateria* Ice::clone() const //puerement virtuelle elle est specifiee dans la cl
 {
     return (new Ice(*this));
 }
+
 void Ice::use(ICharacter& target)
 {
     std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;

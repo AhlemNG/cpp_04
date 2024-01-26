@@ -76,11 +76,15 @@ void MateriaSource::learnMateria(AMateria* m)
 
 AMateria* MateriaSource::createMateria(std::string const& type)
 {
-    for ( int i = 0; i < 4; i++)
+    int i = 0;
+    while (i < 4 && _learntMateria[i] && _learntMateria[i]->getType() != type)
+        i++;
+    if (i > 4 || !_learntMateria[i])
+        std::cout << YELLOW << "cannot create materia!!!" << RESET << std::endl;
+    if (_learntMateria[i] && _learntMateria[i]->getType() == type)
     {
-        if (_learntMateria[i] && _learntMateria[i]->getType() == type)
-            return (_learntMateria[i]->clone());
+        std::cout << YELLOW << "materia has been created successfully!!!" << RESET << std::endl;
+        return (_learntMateria[i]->clone());
     }
-    std::cout << YELLOW << "materia type is unkown, nothing to create!!!" << RESET << std::endl;
     return (0);
 }

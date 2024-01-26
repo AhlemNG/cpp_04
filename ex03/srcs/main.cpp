@@ -27,10 +27,10 @@
 //     return 0;
 // }
 
-// #include "Cure.hpp"
-// #include "Ice.hpp"
-// #include "MateriaSource.hpp"
-// #include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
 int main() {
     std::cout << "__________________________________________" << std::endl;

@@ -5,6 +5,7 @@
 Character::Character() : _name("no_name"), _floorSize(0)
 {
     _floor = NULL;
+    // _maxFloorSize = 0;
     for (int i = 0; i < 4; i++)
         _inventory[i] = 0;
     // std::cout << LBLUE << "Character default Constructor Called" << RESET << std::endl;
@@ -22,22 +23,17 @@ Character::~Character()
         {
             delete _floor[i];
         }
-        delete _floor;
+        delete[] _floor;
     }
-    std::cout << LBLUE << "Character Destructor Called" << RESET << std::endl;
+    // std::cout << LBLUE << "Character Destructor Called" << RESET << std::endl;
 }
 Character::Character(const Character &src)
 {
     _name = src.getName();
     _floorSize = src._floorSize;
     _floorSize = src._maxFloorSize;
-    // if (src._floor)
-    //     _floor = src._floor;
     if (src._floor)
-    {
-        for (int i = 0; i < src._floorSize; ++i)
-            _floor[_floorSize] = src._floor[src._floorSize];
-    }
+        _floor = src._floor;
     for (int i = 0; i < 4; i++)
         _inventory[i] = src._inventory[i]->clone();
     
@@ -71,8 +67,9 @@ Character &Character::operator=(const Character &rhs)
     return *this;
 }
 
-Character::Character(std::string const &name) : _name(name)
+Character::Character(std::string const &name) : _name(name), _floor(0), _floorSize(0), _maxFloorSize(0)
 {
+   
     for (int i = 0; i < 4; i++)
         _inventory[i] = 0;
     // std::cout << LBLUE << "Character parametric Constructor Called" << RESET << std::endl;
@@ -112,29 +109,7 @@ void Character::equip(AMateria *m)
     }
 }
 
-// void Character::unequip(int idx) {
-//     if (idx < 4 && idx >= 0 && _inventory[idx]) {
-//         if (_floor == NULL)
-//         {
-//             _floor = new AMateria*[1];
-//             _maxFloorSize = 1;
-//         }
-//         else if (_floorSize >= _maxFloorSize) {
-//             AMateria** tmp = new AMateria*[_maxFloorSize * 2];
-//             for (int i = 0; i < _maxFloorSize; i++) {
-//                 tmp[i] = _floor[i];
-//             }
-//             delete[] _floor;
-//             _floor = tmp;
-//             _maxFloorSize *=2;
-//         }
-//         _floor[_floorSize] = _inventory[idx];
-//         _floorSize++;
-//         _inventory[idx] = NULL;
-//     }
-//     else
-//         std::cout << GREEN << "Cannot unequip player. The Materia does not exist!" << RESET  << std::endl;
-// }
+
 void Character::unequip(int idx)
 {
     if (idx < 0 || idx >= 4)
@@ -153,7 +128,6 @@ void Character::unequip(int idx)
             for (int i = 0; i < _floorSize; i++)
             {
                 newFloor[i] = _floor[i];
-                // delete _floor[i];
             }
             delete []_floor;
             _floor = newFloor;
@@ -178,7 +152,7 @@ void Character::use(int idx, ICharacter &target)
     }
     else
     {
-       std::cout << "No Materia to be equiped ! Index " << idx << " is empty." << std::endl;
+       std::cout << "No Materia to be used ! Index " << idx << " is empty." << std::endl;
     }
 }
 
