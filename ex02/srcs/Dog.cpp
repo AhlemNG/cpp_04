@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/26 18:10:07 by anouri            #+#    #+#             */
+/*   Updated: 2024/01/26 18:10:08 by anouri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/Dog.hpp"
 #include "../incs/Colors.hpp"
 
@@ -38,7 +50,7 @@ void Dog::makeSound() const
     std::cout<< YELLOW << "hab hab hab" << RESET << std::endl;
 }
 
-void Dog::setIdea(std::string const &idea, int index)
+void Dog::setIdea(std::string idea, int index)
 {
     // Class Brain has a private attribute array of ideas;
     // _brain is pointer to a Brain that has private attribute array of ideas lol
@@ -46,7 +58,7 @@ void Dog::setIdea(std::string const &idea, int index)
 
     this->_brain->setIdea(idea, index);
 }
-std::string const &Dog::getIdea(int index) const
+std::string Dog::getIdea(int index) const
 {
     return this->_brain->getIdea(index);
 }

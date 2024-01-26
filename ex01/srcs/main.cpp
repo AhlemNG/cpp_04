@@ -1,41 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/26 17:00:07 by anouri            #+#    #+#             */
+/*   Updated: 2024/01/26 18:04:06 by anouri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/Animal.hpp"
 #include "../incs/Colors.hpp"
 #include "../incs/Dog.hpp"
 #include "../incs/Cat.hpp"
-// #include "../incs/Brain.hpp"
+#include "../incs/Brain.hpp"
 
-// int main()
-// {
-//     Animal *Tab[10];
+int main()
+{
+    Animal *Tab[10];
 
-//     std::cout << MAGENTA << "**********BRAIN WASHING**********" << RESET << std::endl;
-//     for (int i = 0; i< 5 ; i++)
-//     {
-//         Tab[i] = new Dog();
-//         // std::cout << BLUE << dynamic_cast<Cat*>(const_cast<Animal*>(i))->getIdea(0) << RESET << std::endl;
-//         dynamic_cast<Dog*>(Tab[i])->setIdea("CATS are lazy", 0);
-//     }
-//     for (int i = 5; i< 10 ; i++)
-//     {
-//         Tab[i] = new Cat();
-//         dynamic_cast<Cat*>(Tab[i])->setIdea("CATS Were never afraid of dogs", 0); 
-//     }
-//     std::cout << RED << "**********DEEP COPY TEST**********" << RESET << std::endl;
-//     Cat *kitty = dynamic_cast<Cat*>(Tab[8]);
-//     std::cout << RED << "kitty believes that " << kitty->getIdea(0) << RESET << std::endl;
-//     Dog *puppy = new Dog();
-
-//     puppy->setIdea("Cats are adorable", 0);
-//     std::cout << CYAN << "puppy used to bellive that " << puppy->getIdea(0) << RESET << std::endl;
-//     puppy = dynamic_cast<Dog*>(Tab[0]);
-//     std::cout << RED << "puppy believes now that " << puppy->getIdea(0) << RESET << std::endl;
-
-//     for (int i = 0; i< 10 ; i++)
-//         delete Tab[i];
-//     // delete kitty;
-//     // delete puppy;
-//     return 0;
-// }
+    std::cout << MAGENTA << "************************test************************" << RESET << std::endl;
+    for (int i = 0; i< 10 ; i++)
+    {
+        if (i < 4)
+            Tab[i] = new Dog();
+        else
+            Tab[i] = new Cat();
+    }
+      for (int i = 0; i< 10 ; i++)
+        delete Tab[i];
+    std::cout << MAGENTA << "************************test************************" << RESET << std::endl;
+    Dog *puppy = new Dog();
+    puppy->setIdea("Cats are adorable", 0);
+    Animal *Rex = new Dog();
+    dynamic_cast<Dog*>(Rex)->setIdea("Cats are lazy", 0);
+    std::cout << CYAN << "puppy bellives that " << puppy->getIdea(0) << RESET << std::endl;
+    delete puppy;
+    delete Rex;
+    
+    return 0;
+}
 
 /*dynamic_cast:
 
@@ -150,12 +155,3 @@ It requires at least one virtual function in the base class to enable the polymo
 	
 // 	return 0;
 // }
-
-int main()
-{
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-delete j;//should not create a leak
-delete i;
-return 0;
-}

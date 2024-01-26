@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/26 16:57:59 by anouri            #+#    #+#             */
+/*   Updated: 2024/01/26 16:58:03 by anouri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
@@ -17,7 +29,5 @@ class Animal
         virtual void makeSound() const;
         std::string const &getType() const;
 };
-
-
 
 #endif

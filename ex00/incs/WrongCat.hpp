@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/26 16:48:43 by anouri            #+#    #+#             */
+/*   Updated: 2024/01/26 16:48:58 by anouri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WRONGCAT_HPP
 #define WRONGCAT_HPP
 
@@ -10,7 +22,7 @@ class WrongCat : public WrongAnimal
         virtual ~WrongCat(); // destructor
         WrongCat(WrongCat const &src); //copy constructor
         WrongCat &operator=(WrongCat const &rhs); // copy assignation operator
-        virtual void makeSound();
+        void makeSound();
 };
 
 #endif

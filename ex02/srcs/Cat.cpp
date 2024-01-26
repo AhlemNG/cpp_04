@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/26 18:09:58 by anouri            #+#    #+#             */
+/*   Updated: 2024/01/26 18:09:59 by anouri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/Cat.hpp"
 #include "../incs/Colors.hpp"
 
@@ -35,7 +47,7 @@ void Cat::makeSound() const
     std::cout<< GREEN << "miao miao miao" << RESET << std::endl;
 }
 
-void Cat::setIdea(std::string const &idea, int index)
+void Cat::setIdea(std::string idea, int index)
 {
     // Class Brain has a private attribute array of ideas;
     // _brain is pointer to a Brain that has private attribute array of ideas lol
@@ -43,7 +55,7 @@ void Cat::setIdea(std::string const &idea, int index)
 
     this->_brain->setIdea(idea, index);
 }
-std::string const &Cat::getIdea(int index) const
+std::string  Cat::getIdea(int index) const
 {
     return this->_brain->getIdea(index);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anouri <anouri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/26 18:09:54 by anouri            #+#    #+#             */
+/*   Updated: 2024/01/26 18:09:55 by anouri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/Brain.hpp"
 #include "../incs/Colors.hpp"
 
@@ -24,7 +36,7 @@ Brain &Brain::operator=(Brain const &rhs) // copy assignation operator
     return (*this);
 }
 
-void Brain::setIdea(std::string const &idea, int index)
+void Brain::setIdea(std::string idea, int index)
 {
     if (index >= 0 && index <= 99)
       _ideas[index] = idea;
@@ -34,7 +46,7 @@ void Brain::setIdea(std::string const &idea, int index)
         std::cout << RED << "This is OVERTHINKING!!!!!" <<RESET << std::endl;
 }
 
-std::string const &Brain::getIdea(int index) const
+std::string  Brain::getIdea(int index) const
 {
     std::string const &idea = "bad index";
     if (index >= 0 && index <= 99)
